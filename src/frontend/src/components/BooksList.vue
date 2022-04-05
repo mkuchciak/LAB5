@@ -3,10 +3,8 @@
     <h1>{{ msg }}</h1>
     <h4>Books</h4>
     <a>
-    <Book
         v-bind:key="book.id"
         v-for="book of books"
-    />
         {{book.title}}, {{book.pages}}, {{book.author}}
     </a>
   </div>
@@ -14,14 +12,10 @@
 </template>
 
 <script>
-import Book from './Book';
 export default {
   name: 'BooksList',
   props: {
     msg: String
-  },
-  components: {
-      Book
   },
   data: function () {
       return {
