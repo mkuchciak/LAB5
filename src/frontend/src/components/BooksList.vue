@@ -2,11 +2,12 @@
   <div class="books-list">
     <h1>{{ msg }}</h1>
     <h4>Books</h4>
-    <!-- <a>
+    <a
         v-bind:key="book.id"
         v-for="book of books"
+    >
         {{book.title}}, {{book.pages}}, {{book.author}}
-    </a> -->
+    </a>
   </div>
   
 </template>
