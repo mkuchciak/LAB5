@@ -1,5 +1,16 @@
 <template>
   <div class="books">
-    <h1>XDD</h1>
+    <BooksList msg="Here will be the list of books"/>
   </div>
 </template>
+
+<script>
+import BooksList from '@/components/BooksList.vue'
+export default {
+    name: 'BooksView',
+    components: {
+        BooksList
+    }
+}
+</script>
+
