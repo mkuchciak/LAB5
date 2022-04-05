@@ -1,9 +1,7 @@
 package com.example.lab5.DBModels;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,7 +10,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Author {
+public @Getter @Setter
+class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
