@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/books")
+@CrossOrigin(origins ="*", allowedHeaders = "*")
 public class BookController {
 
     private final BookService bookService;
@@ -35,9 +36,9 @@ public class BookController {
         return new ResponseEntity<>(newBook, HttpStatus.CREATED);
     }
 
-    @PutMapping("/edit")
-    public ResponseEntity<Book> editBook(@RequestBody BookDTO bookDTO){
-        var editedBook = bookService.editBook(bookDTO);
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<Book> editBook(@RequestBody BookDTO bookDTO, @PathVariable long id){
+        var editedBook = bookService.editBook(bookDTO, id);
         if(editedBook.getId() == -1){
             throw new AuthorNotFoundException("Author could not be found", HttpStatus.NOT_FOUND.value());
         }

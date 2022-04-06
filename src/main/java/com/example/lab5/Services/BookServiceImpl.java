@@ -44,8 +44,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Book editBook(BookDTO bookDTO) {
-        var book = bookDao.findBookById(bookDTO.getId());
+    public Book editBook(BookDTO bookDTO, long id) {
+        var book = bookDao.findBookById(id);
         if(bookDTO.getTitle() != null)
             book.setTitle(bookDTO.getTitle());
         if(bookDTO.getPages() != null)

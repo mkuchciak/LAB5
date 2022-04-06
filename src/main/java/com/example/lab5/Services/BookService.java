@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BookService {
     Book saveBook(BookDTO bookDTO);
-    Book editBook(BookDTO bookDTO);
+    Book editBook(BookDTO bookDTO, long id);
     Book deleteBook(long id);
     List<Book> getBooksByTitle(String title);
     List<Book> getBooksByAuthor(long authorId);
